@@ -1,0 +1,54 @@
+---
+web_research:
+  description: Conduct comprehensive web research on {topic}. Search for current trends,
+    statistics, recent developments, expert opinions, and relevant case studies. Focus
+    on gathering credible, up-to-date information from reliable sources including
+    industry reports, news articles, and authoritative websites.
+  expected_output: A detailed research report containing current trends, key statistics,
+    recent developments, and expert insights about {topic}, with properly cited sources
+    and organized findings.
+  agent: web_research_specialist
+academic_research:
+  description: Conduct scholarly research on {topic} using academic databases and
+    peer-reviewed sources. Find relevant research papers, studies, theoretical frameworks,
+    and academic perspectives. Focus on identifying key methodologies, findings, and
+    authoritative academic viewpoints.
+  expected_output: A comprehensive academic research summary including key research
+    papers, theoretical frameworks, methodologies, and scholarly insights about {topic},
+    with proper academic citations.
+  agent: academic_research_analyst
+content_strategy_development:
+  description: Analyze the research findings from both web and academic sources to
+    develop a comprehensive content strategy for {topic}. Create a detailed content
+    outline, identify key messaging points, determine the target audience, and establish
+    content objectives based on the research insights.
+  expected_output: A detailed content strategy document including content outline,
+    key messaging framework, target audience analysis, and strategic recommendations
+    for presenting {topic} effectively.
+  agent: content_strategist
+  context:
+  - web_research
+  - academic_research
+content_creation:
+  description: Create comprehensive, high-quality content about {topic} following
+    the content strategy and incorporating all research findings. Write engaging,
+    informative content that balances academic insights with practical applications.
+    Ensure the content is well-structured, accessible, and properly references the
+    research sources.
+  expected_output: A complete, well-written piece of content about {topic} that incorporates
+    research findings, follows the strategic framework, and is engaging for the target
+    audience. The content should be properly formatted with citations and references.
+  agent: content_writer
+  context:
+  - content_strategy_development
+quality_review_and_final_approval:
+  description: Conduct a thorough review of the final content for {topic}. Check for
+    accuracy, completeness, quality of writing, proper citation of sources, and alignment
+    with the original research findings and strategic objectives. Provide final recommendations
+    and approval.
+  expected_output: A final quality assessment report with recommendations and the
+    approved, polished version of the content about {topic}, ready for publication
+    or use.
+  agent: quality_reviewer
+  context:
+  - content_creation
