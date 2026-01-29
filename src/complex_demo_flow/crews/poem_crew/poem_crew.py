@@ -41,11 +41,12 @@ class PoemCrew:
 
     @crew
     def crew(self) -> Crew:
-        """Creates the Research Crew"""
+        """Creates the Poem Crew"""
         # To learn how to add knowledge sources to your crew, check out the documentation:
         # https://docs.crewai.com/concepts/knowledge#what-is-knowledge
 
         return Crew(
+            name="PoemCrew",
             agents=self.agents,  # Automatically created by the @agent decorator
             tasks=self.tasks,  # Automatically created by the @task decorator
             process=Process.sequential,

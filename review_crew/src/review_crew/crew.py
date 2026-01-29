@@ -56,6 +56,7 @@ class ReviewCrew():
         # https://docs.crewai.com/concepts/knowledge#what-is-knowledge
 
         return Crew(
+            name="ReviewCrew",
             agents=self.agents, # Automatically created by the @agent decorator
             tasks=self.tasks, # Automatically created by the @task decorator
             process=Process.sequential,
