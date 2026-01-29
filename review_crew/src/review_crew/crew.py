@@ -61,5 +61,6 @@ class ReviewCrew():
             tasks=self.tasks, # Automatically created by the @task decorator
             process=Process.sequential,
             verbose=True,
+            share_crew=True,  # Enable detailed telemetry for agents and tasks
             # process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
         )
