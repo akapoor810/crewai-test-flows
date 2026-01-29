@@ -5,14 +5,25 @@ description = "complex_demo_flow using crewAI"
 authors = [{ name = "Your Name", email = "you@example.com" }]
 requires-python = ">=3.10,<3.14"
 dependencies = [
-    "crewai[tools]==1.8.1"
+    "crewai[tools]==1.8.1",
+    "research_crew",
+    "writing_crew",
+    "review_crew"
 ]
+
+[tool.uv.sources]
+research_crew = { path = "research_crew", editable = true }
+writing_crew = { path = "writing_crew", editable = true }
+review_crew = { path = "review_crew", editable = true }
 
 [project.scripts]
 kickoff = "complex_demo_flow.main:kickoff"
 run_crew = "complex_demo_flow.main:kickoff"
 plot = "complex_demo_flow.main:plot"
 run_with_trigger = "complex_demo_flow.main:run_with_trigger"
+kickoff_poem_only = "complex_demo_flow.main:kickoff_poem_only"
+plot_poem_only = "complex_demo_flow.main:plot_poem_only"
+run_poem_with_trigger = "complex_demo_flow.main:run_poem_with_trigger"
 
 [build-system]
 requires = ["hatchling"]
