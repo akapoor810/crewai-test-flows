@@ -4,6 +4,9 @@ from crewai import Agent, Crew, Process, Task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from crewai.project import CrewBase, agent, crew, task
 
+from complex_demo_flow.tools.character_counter import character_counter
+from complex_demo_flow.tools.string_reverser import string_reverser
+
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
@@ -28,6 +31,7 @@ class PoemCrew:
     def poem_writer(self) -> Agent:
         return Agent(
             config=self.agents_config["poem_writer"],  # type: ignore[index]
+            tools=[character_counter, string_reverser],
         )
 
     # To learn more about structured task outputs,
